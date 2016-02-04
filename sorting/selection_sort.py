@@ -8,3 +8,4 @@ def selectionSort(array):
        temp = array[fillslot]
        array[fillslot] = array[positionOfMax]
        array[positionOfMax] = temp
+   return array
