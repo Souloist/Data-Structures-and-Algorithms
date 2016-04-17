@@ -4,22 +4,22 @@ Here I will have implementation of various data structures and algorithms in jav
 
 **Data Structures**
 
-1. Lists
-2. Linked Lists
-3. Stacks
-4. Queues
-5. Dequeues 
-6. Binary Trees
-7. Binary Search Trees
-8. Hash Tables
+- Lists
+- Linked Lists
+- Stacks
+- Queues
+- Dequeues 
+- Binary Trees
+- Binary Search Trees
+- Hash Tables
 
 **Algorithms**
 
-1. Selection sort
-2. Bubble Sort
-3. Merge Sort
-4. Quick Sort
-5. Harr Transform
-5. Daubechies transform
-6. Gradient Descent 
-7. Least Squares Convolution
+- Selection sort
+- Bubble Sort
+- Merge Sort
+- Quick Sort
+- Harr Transform
+- Daubechies transform
+- Gradient Descent 
+- Least Squares Convolution
