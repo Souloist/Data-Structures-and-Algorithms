@@ -38,9 +38,21 @@ public class IntList{
 	}
 
 	/* Returns the value of that index in the array
-	 * given an index */
+	 * using recursion */
 
 	public int get(int index){
+
+		if (index == 0){
+			return head;
+		}
+
+		return tail.get(index - 1);
+	}
+
+	/* Returns the value of that index in the array
+	 * given an index */
+
+	public int get_iter(int index){
 
 		IntList p = this;
 		while (index > 0){
@@ -67,7 +79,7 @@ public class IntList{
 		L = new IntList(2, L);
 		L = new IntList(3, L);
 
-		// List looks like [3, 2, 1]
+		// List looks like 3 -> 2 -> 1
 
 		System.out.println("L = "+ L);
 		System.out.println("First index is " + L.get(0));
