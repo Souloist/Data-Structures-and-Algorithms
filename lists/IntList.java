@@ -79,7 +79,7 @@ public class IntList{
 		L = new IntList(2, L);
 		L = new IntList(3, L);
 
-		// List looks like 3 -> 2 -> 1
+		// List looks like [3, 2, 1]
 
 		System.out.println("L = "+ L);
 		System.out.println("First index is " + L.get(0));
