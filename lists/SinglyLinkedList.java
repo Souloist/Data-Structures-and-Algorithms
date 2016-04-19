@@ -51,7 +51,7 @@ public class SinglyLinkedList{
 		return intNodeSize(front);
 	}*/
 
-	/* However we can also create a static size variable
+	/* However we can also create a size instance variable
 	 * that gets incremented every time a Node is created */
 
 	/* Returns size of sList */
