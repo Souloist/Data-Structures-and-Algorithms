@@ -62,6 +62,36 @@ public class IntList{
 		return p.head;
 	}
 
+	/* Returns an IntList with all values incremented by x 
+	 * from the input IntList */
+
+	public static IntList incrList(IntList L, int incr){
+
+		// base case
+		if (L == null){
+			return null;
+		}
+
+		IntList newList = new IntList(L.head + incr, null);
+		// logically makes sense to append the new IntList to the tail of the previous
+		newList.tail = incrList(L.tail, incr);
+		return newList;
+		
+	}
+
+	/* Returns an IntList with all values incremented by x
+	 * without using new */
+
+	public static IntList incrList2(IntList L, int incr){
+		if (L == null){
+			return null;
+		}
+
+		// Since java is pass by value
+		L.head = L.head + incr;
+		L.tail = incrList2(L.tail, incr);
+		return L;
+	} 
 	/* Returns the string representation of the list */
 	public String toString(){
 
@@ -80,11 +110,12 @@ public class IntList{
 		L = new IntList(3, L);
 
 		// List looks like [3, 2, 1]
-
 		System.out.println("L = "+ L);
 		System.out.println("First index is " + L.get(0));
 		System.out.println("Last index is " + L.get(2));
 		System.out.println("Size of list is " + L.size());
+		System.out.println("New IntList " + incrList2(L,3));
 		/*System.out.println(L.iter_size());*/
+
 	}
 }
