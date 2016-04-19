@@ -1,8 +1,10 @@
 public class SinglyLinkedList{
 	private IntNode front;
+	private int size;
 
 	public SinglyLinkedList(int x){
 		front = new IntNode(x, null);
+		size++;
 	}
 
 	public void insertFront(int x){
@@ -11,6 +13,7 @@ public class SinglyLinkedList{
 		/* Or just
 		front = new IntNode(x, front);
 		*/
+		size++;
 	}
 
 	public void insertBack(int x){
@@ -20,24 +23,31 @@ public class SinglyLinkedList{
 		}
 
 		temp.next = new IntNode(x, null);
+		size++;
 	}
 
 	/* When working with recursive data structures,
 	 * we should create a private helper method 
 	 * to deal with them */
 
-	private static int intNodeSize(IntNode n){
+/*	private static int intNodeSize(IntNode n){
 		if (n.next == null){
 			return 1;
 		}
 
 		return 1 + intNodeSize(n.next);
-	}
+	}*/
+
+/*	public int size(){
+		return intNodeSize(front);
+	}*/
+
+	/* However we can also create a static size variable
+	 * that gets incremented every time a Node is created */
 
 	public int size(){
-		return intNodeSize(front);
+		return size;
 	}
-
 	public int getFront(){
 		return front.item;
 	}
@@ -60,6 +70,7 @@ public class SinglyLinkedList{
 		// 3 -> 5 -> 10 -> 3
 
 		System.out.println(s1.getBack());
+		System.out.println("Size of sList is: " + s1.size());
 	}
 }
 
