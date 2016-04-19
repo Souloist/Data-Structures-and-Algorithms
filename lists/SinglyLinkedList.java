@@ -2,11 +2,19 @@ public class SinglyLinkedList{
 	private IntNode front;
 	private int size;
 
-	public SinglyLinkedList(int x){
-		front = new IntNode(x, null);
-		size++;
+	/* Constructor for emptry sList */
+	public SinglyLinkedList(){
+		front = null;
+		size = 0;
 	}
 
+	/* Constructor for sList of size 1 */
+	public SinglyLinkedList(int x){
+		front = new IntNode(x, null);
+		size = 1;
+	}
+
+	/* Inserts new node to front of sList */
 	public void insertFront(int x){
 		IntNode old = front;
 		front = new IntNode(x, old);
@@ -16,6 +24,7 @@ public class SinglyLinkedList{
 		size++;
 	}
 
+	/* Insets new node to back of sList */
 	public void insertBack(int x){
 		IntNode temp = front;
 		while (temp.next != null){
@@ -45,13 +54,17 @@ public class SinglyLinkedList{
 	/* However we can also create a static size variable
 	 * that gets incremented every time a Node is created */
 
+	/* Returns size of sList */
 	public int size(){
 		return size;
 	}
+
+	/* Returns first value of sList */
 	public int getFront(){
 		return front.item;
 	}
 
+	/*Returns last value of sList */
 	public int getBack(){
 		IntNode temp = front;
 		while (temp.next != null){
