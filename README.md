@@ -4,14 +4,16 @@ Here I will have implementation of various data structures and algorithms in jav
 
 **Data Structures**
 
-- Lists
+- Arrays
 - Linked Lists
 - Stacks
 - Queues
-- Dequeues 
+- Dequeues
+- Hash Tables
 - Binary Trees
 - Binary Search Trees
-- Hash Tables
+- Heaps
+
 
 **Algorithms**
 
