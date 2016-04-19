@@ -26,6 +26,13 @@ public class SinglyLinkedList{
 
 	/* Insets new node to back of sList */
 	public void insertBack(int x){
+		
+		/* Prevent nullpointerexception if list is empty */
+		if (front == null){
+			insertFront(x);
+			return;
+		}
+
 		IntNode temp = front;
 		while (temp.next != null){
 			temp = temp.next;
@@ -66,6 +73,7 @@ public class SinglyLinkedList{
 
 	/*Returns last value of sList */
 	public int getBack(){
+
 		IntNode temp = front;
 		while (temp.next != null){
 			temp = temp.next;
@@ -75,14 +83,15 @@ public class SinglyLinkedList{
 	}
 
 	public static void main(String[] args){
-		SinglyLinkedList s1 = new SinglyLinkedList(10);
+		SinglyLinkedList s1 = new SinglyLinkedList();
+		s1.insertBack(3);	
 		s1.insertFront(5);
 		s1.insertFront(3);
-		s1.insertBack(3);
 
-		// 3 -> 5 -> 10 -> 3
 
-		System.out.println(s1.getBack());
+		// 3 -> 5 -> 3
+
+		System.out.println("Last value in sList: " + s1.getBack());
 		System.out.println("Size of sList is: " + s1.size());
 	}
 }
