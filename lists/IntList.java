@@ -10,7 +10,6 @@ public class IntList{
 		tail = t;
 	}
 
-
 	/* Returns the number of integers in this IntList
 	 * using recursion */
 	public int size(){
@@ -39,7 +38,6 @@ public class IntList{
 
 	/* Returns the value of that index in the array
 	 * using recursion */
-
 	public int get(int index){
 
 		if (index == 0){
@@ -51,20 +49,20 @@ public class IntList{
 
 	/* Returns the value of that index in the array
 	 * given an index */
-
 	public int get_iter(int index){
 
 		IntList p = this;
+		
 		while (index > 0){
 			p = p.tail;
 			index-=1;
 		}
+
 		return p.head;
 	}
 
 	/* Returns an IntList with all values incremented by x 
 	 * from the input IntList */
-
 	public static IntList incrList(IntList L, int incr){
 
 		// base case
@@ -75,13 +73,12 @@ public class IntList{
 		IntList newList = new IntList(L.head + incr, null);
 		// logically makes sense to append the new IntList to the tail of the previous
 		newList.tail = incrList(L.tail, incr);
-		return newList;
 		
+		return newList;
 	}
 
 	/* Returns an IntList with all values incremented by x
 	 * without using new */
-
 	public static IntList incrList2(IntList L, int incr){
 		if (L == null){
 			return null;
@@ -92,6 +89,7 @@ public class IntList{
 		L.tail = incrList2(L.tail, incr);
 		return L;
 	} 
+	
 	/* Returns the string representation of the list */
 	public String toString(){
 
