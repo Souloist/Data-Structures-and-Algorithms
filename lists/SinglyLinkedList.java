@@ -1,85 +1,67 @@
 public class SinglyLinkedList{
-	private IntNode front;
+	private IntNode sentinel;
 	private int size;
 
 	/* Constructor for emptry sList */
 	public SinglyLinkedList(){
-		front = null;
 		size = 0;
+		/* The value of sentinel does not matter
+		 * What matters is that the value is not null
+		 * This allows us to avoid nullpointer exceptions */
+		sentinel = new IntNode(232, null);
 	}
 
 	/* Constructor for sList of size 1 */
 	public SinglyLinkedList(int x){
-		front = new IntNode(x, null);
 		size = 1;
+		sentinel = new IntNode(232, null);
+		sentinel.next = new IntNode(x, null);
 	}
 
 	/* Inserts new node to front of sList */
 	public void insertFront(int x){
-		IntNode old = front;
-		front = new IntNode(x, old);
-		/* Or just
-		front = new IntNode(x, front);
-		*/
+
+		/* Remember oldFrontNode is not the actual front node
+		 * It is the node behind the sentinal node */
+		IntNode oldFrontNode = sentinel.next;
+		sentinel.next = new IntNode(x, oldFrontNode);
 		size++;
-	}
-
-	/* Insets new node to back of sList */
-	public void insertBack(int x){
-		
-		/* Prevent nullpointerexception if list is empty */
-		if (front == null){
-			insertFront(x);
-			return;
-		}
-
-		IntNode temp = front;
-		while (temp.next != null){
-			temp = temp.next;
-		}
-
-		temp.next = new IntNode(x, null);
-		size++;
-	}
-
-	/* When working with recursive data structures,
-	 * we should create a private helper method 
-	 * to deal with them */
-
-/*	private static int intNodeSize(IntNode n){
-		if (n.next == null){
-			return 1;
-		}
-
-		return 1 + intNodeSize(n.next);
-	}*/
-
-/*	public int size(){
-		return intNodeSize(front);
-	}*/
-
-	/* However we can also create a size instance variable
-	 * that gets incremented every time a Node is created */
-
-	/* Returns size of sList */
-	public int size(){
-		return size;
 	}
 
 	/* Returns first value of sList */
 	public int getFront(){
-		return front.item;
+		return sentinel.next.item;
+	}	
+
+	/* Helper method to get the last node */
+
+	private IntNode getBackNode(){
+		IntNode p = sentinel;
+
+		while (p.next != null){
+			p = p.next;
+		}
+
+		return p;
+	}
+	/* Insets new node to back of sList */
+	public void insertBack(int x){
+
+		IntNode oldback = getBackNode();
+		oldback.next = new IntNode(x, null);
+		size++;
 	}
 
 	/*Returns last value of sList */
 	public int getBack(){
 
-		IntNode temp = front;
-		while (temp.next != null){
-			temp = temp.next;
-		}
+		IntNode oldback = getBackNode();
+		return oldback.item;
+	}	
 
-		return temp.item;
+	/* Returns size of sList */
+	public int size(){
+		return size;
 	}
 
 	public static void main(String[] args){
