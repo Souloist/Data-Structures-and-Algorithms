@@ -2,6 +2,8 @@
 Performs binary search an an array and returns False if the
 number does not exist in the array, otherwise, it returns the
 index of the number
+
+Created by Richard Shen
 '''
 
 def binary_search(value, array, min, max):
