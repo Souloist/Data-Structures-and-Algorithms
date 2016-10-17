@@ -1,24 +1,24 @@
 class Stack(object):
 
-	# Consider the "top" of the stack as the end of the array
+    # Consider the "top" of the stack as the end of the array
 
-	def __init__(self):
-		self.items = []
+    def __init__(self):
+        self.items = []
 
-	def push(self, item):
-		self.items.append(item)
+    def push(self, item):
+        self.items.append(item)
 
-	def pop(self):
-		self.items.pop()
+    def pop(self):
+        self.items.pop()
 
-	def peek(self):
-		return self.items[-1]
+    def peek(self):
+        return self.items[-1]
 
-	def isEmpty(self):
-		return self.items == []
+    def isEmpty(self):
+        return self.items == []
 
-	def size(self):
-		return len(self.items)
+    def size(self):
+        return len(self.items)
 
 
 # New stack object

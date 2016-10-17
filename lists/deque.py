@@ -1,26 +1,26 @@
 class Deque:
 
-	# Back of array is front of line
-	def __init__(self):
-		self.line = []
+    # Back of array is front of line
+    def __init__(self):
+        self.line = []
 
-	def addFront(self,item):
-		self.line.append(item)
+    def addFront(self,item):
+        self.line.append(item)
 
-	def removeFront(self):
-		self.line.pop()
+    def removeFront(self):
+        self.line.pop()
 
-	def addRear(self,item):
-		self.line.insert(0,item)
+    def addRear(self,item):
+        self.line.insert(0,item)
 
-	def removeRear(self):
-		self.line = self.line[1::]
+    def removeRear(self):
+        self.line = self.line[1::]
 
-	def isEmpty(self):
-		return len(self.line)==0
+    def isEmpty(self):
+        return len(self.line) == 0
 
-	def size(self):
-		return len(self.line)
+    def size(self):
+        return len(self.line)
 
 # testing
 
