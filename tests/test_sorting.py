@@ -1,9 +1,10 @@
-import os, sys
-sys.path.append(os.path.join(os.getcwd(), os.path.pardir))
+from __future__ import absolute_import
 
 import unittest
 
 from sorting import (
+    selection_sort,
+    insertion_sort,
     bubble_sort,
     quick_sort,
 )
@@ -15,10 +16,18 @@ class TestSorting(unittest.TestCase):
         self.sorted_array = [0, 2, 5, 6, 8, 9]
 
     def test_selection_sort(self):
-        pass
+        selection_sort(self.unsorted_array)
+        self.assertEqual(
+            self.unsorted_array,
+            self.sorted_array,
+        )
 
     def test_insertion_sort(self):
-        pass
+        insertion_sort(self.unsorted_array)
+        self.assertEqual(
+            self.unsorted_array,
+            self.sorted_array,
+        )
 
     def test_bubble_sort(self):
         bubble_sort(self.unsorted_array)
@@ -38,6 +47,3 @@ class TestSorting(unittest.TestCase):
 
     def test_heap_sort(self):
         pass
-
-if __name__ == '__main__':
-    unittest.main()

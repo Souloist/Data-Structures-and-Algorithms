@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 def selection_sort(array):
    for fillslot in range(len(array)-1,0,-1):
        positionOfMax=0

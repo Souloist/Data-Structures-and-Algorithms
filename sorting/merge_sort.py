@@ -5,8 +5,8 @@ def merge_sort(alist):
         lefthalf = alist[:mid]
         righthalf = alist[mid:]
 
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+        merge_Sort(lefthalf)
+        merge_Sort(righthalf)
 
         i=0
         j=0

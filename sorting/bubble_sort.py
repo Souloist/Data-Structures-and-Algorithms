@@ -1,6 +1,9 @@
 '''
-bubbleSort sorts an array by iterating through and swapping consecutive pairs of numbers if they are out of over.
-This algorithm will take O(n^2) time and O(n) space.
+bubbleSort sorts an array by iterating through and swapping 
+consecutive pairs of numbers if they are out of over. This 
+algorithm will take O(n^2) time and O(n) space.
+
+Created by Richard Shen
 '''
 
 def bubble_sort(array):
