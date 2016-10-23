@@ -31,4 +31,4 @@ Here I will have implementation of various data structures and algorithms in jav
 
 # Tests
 
-Tests can be run with `python tests/test_something.py`
+Tests can be run with `nosetests -v`
