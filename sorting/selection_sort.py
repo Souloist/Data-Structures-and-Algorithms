@@ -1,13 +1,14 @@
 from __future__ import absolute_import
 
 def selection_sort(array):
-   for fillslot in range(len(array)-1,0,-1):
-       positionOfMax=0
-       for location in range(1,fillslot+1):
-           if array[location]>array[positionOfMax]:
-               positionOfMax = location
+	for i in range(len(array)):
+		# index of smallest element
+		smallest = i
 
-       temp = array[fillslot]
-       array[fillslot] = array[positionOfMax]
-       array[positionOfMax] = temp
-   return array
+		for j in range(i+1, len(array)):
+			if array[smallest] > array[j]:
+				smallest = j
+		
+		array[i], array[smallest] = array[smallest], array[i]
+		print array
+	return array
